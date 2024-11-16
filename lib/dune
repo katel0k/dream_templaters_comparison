@@ -1,0 +1,4 @@
+(library
+ (name dhtml)
+ (libraries dream-html)
+ (instrumentation (backend bisect_ppx)))

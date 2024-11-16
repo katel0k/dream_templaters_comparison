@@ -1,0 +1,5 @@
+(test
+ (libraries
+  dhtml
+  dream-html)
+ (name dhtml_test))

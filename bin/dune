@@ -1,0 +1,4 @@
+(executable
+ (public_name comparison)
+ (name main)
+ (libraries dhtml))

@@ -1,5 +1,19 @@
 (test
  (libraries
-  dhtml
-  dream-html)
+  dhtml)
  (name dhtml_test))
+
+(test
+ (libraries
+  ehtml)
+  (name ehtml_test))
+
+(test
+ (libraries
+  thtml)
+  (name thtml_test))
+
+(test
+ (libraries
+  thtml_percent)
+  (name thtml_percent_test))

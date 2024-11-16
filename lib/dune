@@ -1,4 +1,33 @@
 (library
+ (modules dhtml)
  (name dhtml)
  (libraries dream-html)
  (instrumentation (backend bisect_ppx)))
+
+(library
+ (modules ehtml)
+ (name ehtml)
+ (libraries dream)
+ (instrumentation (backend bisect_ppx)))
+
+(rule
+ (targets ehtml.ml)
+ (deps ehtml.eml.ml)
+ (action (run dream_eml %{deps})))
+
+(library
+ (modules thtml)
+ (name thtml)
+ (libraries tyxml))
+
+(library
+ (modules thtml_percent)
+ (name thtml_percent)
+ (libraries tyxml)
+ (preprocess (pps tyxml-ppx)))
+
+; (rule
+;  (targets thtml.ml)
+;  (deps thtml.exe)
+;  (action (run %{exe:site_html.exe})
+; ))

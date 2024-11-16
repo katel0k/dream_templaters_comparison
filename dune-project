@@ -25,11 +25,16 @@
   dream
   dream-html
   (ocaml-lsp-server :dev)
+  (ocamlformat :dev)
 
   (alcotest :with-test)
   (bisect_ppx (and :with-test (>= 2.5.0)))  ; --instrument-with.
   (ppx_expect (and :with-test (>= v0.15.0) (< v0.17.0)))
   (ppx_yojson_conv :with-test)
+
+  tyxml
+  tyxml-ppx
+  tyxml-jsx
 
   (odoc :with-doc)
  )

@@ -23,6 +23,8 @@ depends: [
   "tyxml"
   "tyxml-ppx"
   "tyxml-jsx"
+  "mlx"
+  "html_of_jsx"
   "odoc" {with-doc}
 ]
 build: [

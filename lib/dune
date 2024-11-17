@@ -28,8 +28,9 @@
  (preprocess (pps tyxml-ppx))
  (instrumentation (backend bisect_ppx)))
 
-; (rule
-;  (targets thtml.ml)
-;  (deps thtml.exe)
-;  (action (run %{exe:site_html.exe})
-; ))
+(library
+ (modules xhtml)
+ (name xhtml)
+ (libraries html_of_jsx)
+ (preprocess (pps html_of_jsx.ppx))
+ (instrumentation (backend bisect_ppx)))

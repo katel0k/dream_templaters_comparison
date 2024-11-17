@@ -36,9 +36,21 @@
   tyxml-ppx
   tyxml-jsx
 
+  mlx
+  html_of_jsx
+
   (odoc :with-doc)
  )
  (tags
-  (topics "to describe" your project)))
+  (topics "to describe" your project))
+ (allow_empty))
+
+(dialect
+ (name mlx)
+ (implementation
+  (extension mlx)
+  (merlin_reader mlx)
+  (preprocess
+   (run mlx-pp %{input-file}))))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html

@@ -1,0 +1,18 @@
+(* open Xhtml *)
+
+(* let () = assert(JSX.render <greet who="world" /> = "<>") *)
+  (* print_endline (render (
+    <div>
+      <div>"title"</div>
+      <div>"content"</div>
+    </div>
+  )) *)
+
+let () = print_endline ("<div>
+  <div>
+    title
+  </div>
+  <div>
+    content
+  </div>
+</div>")

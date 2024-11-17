@@ -1,4 +1,6 @@
 (executable
- (public_name comparison)
- (name main)
- (libraries dhtml ehtml thtml thtml_percent))
+ (libraries html_of_jsx xhtml)
+ (modules xhtml_test_exec)
+ (preprocess (pps html_of_jsx.ppx))
+ (instrumentation (backend bisect_ppx))
+ (name xhtml_test_exec))

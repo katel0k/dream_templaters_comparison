@@ -18,3 +18,6 @@
  (libraries
   thtml_percent)
   (name thtml_percent_test))
+
+(cram
+ (deps ../../bin/xhtml_test_exec.exe))

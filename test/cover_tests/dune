@@ -10,6 +10,7 @@
 
 (test
  (libraries
+  tyxml
   thtml)
   (name thtml_test))
 

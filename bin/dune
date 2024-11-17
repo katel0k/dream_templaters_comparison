@@ -1,4 +1,4 @@
 (executable
  (public_name comparison)
  (name main)
- (libraries dhtml))
+ (libraries dhtml ehtml thtml thtml_percent))

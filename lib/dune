@@ -18,13 +18,15 @@
 (library
  (modules thtml)
  (name thtml)
- (libraries tyxml))
+ (libraries tyxml)
+ (instrumentation (backend bisect_ppx)))
 
 (library
  (modules thtml_percent)
  (name thtml_percent)
  (libraries tyxml)
- (preprocess (pps tyxml-ppx)))
+ (preprocess (pps tyxml-ppx))
+ (instrumentation (backend bisect_ppx)))
 
 ; (rule
 ;  (targets thtml.ml)

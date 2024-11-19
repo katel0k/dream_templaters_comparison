@@ -34,3 +34,8 @@
  (libraries html_of_jsx)
  (preprocess (pps html_of_jsx.ppx))
  (instrumentation (backend bisect_ppx)))
+
+(library
+ (modules common_test)
+ (name common_test)
+)

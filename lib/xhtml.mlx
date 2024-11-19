@@ -1,39 +1,71 @@
-let greet ~who () =
+let styles () =
+  <style>
+".wrapper {
+    background-color: grey;
+    padding: 100px 20% 100px 20%;
+}
+#padding {
+    font-size: 20px;
+    color: lightblue;
+}
+body {
+    margin: 0;
+}
+.repeating_values_wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+.repeating_value {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    vertical-align: middle;
+}
+.repeating_values-colored {
+    background-color: grey;
+    height: 400px;
+}"
+  </style>
+
+let repeating_field ~is_colored ~children () =
+  <div class_=(
+      if is_colored then "repeating_value repeating_values-colored"
+      else "repeating_value"
+    )>
+    children
+  </div>
+
+
+let page () =
   <html>
-    <head>
-      <title>"Greeting"</title>
-    </head>
-    <body>
-      <h1>"Good morning, " (JSX.string who) "!"</h1>
-    </body>
+  <head>
+      <title>"My comparison test"</title>
+      <styles />
+  </head>
+  <body>
+      <div class_="wrapper">
+          <h1 style="font-size: 40px;color:aliceblue;">"Cumtest "<br/>" The future of testing"</h1>
+          <p id="padding">
+              "Imagine, you want to compare several templaters doing the same task."
+          </p>
+      </div>
+      <div class_="test_suites">
+          <h2 style="padding: 100px 20%">"We are comparing those tests"</h2>
+          <div class_="repeating_values_wrapper">
+            <repeating_field is_colored=true>
+              <span>"We can compare not one,"</span>
+            </repeating_field>
+            <repeating_field is_colored=false>
+              <span>"not two,"</span>
+            </repeating_field>
+            <repeating_field is_colored=true>
+            <span>"but three values!"</span>
+            </repeating_field>
+          </div>
+      </div>
+  </body>
   </html>
 
-(* let () =
-  let html = JSX.render <greet who="who" /> in
-  assert (html = "<html>
-    <head>
-      <title>Greeting</title>
-    </head>
-    <body>
-      <h1>Good morning, !</h1>
-    </body>
-  </html>") *)
-
-(* open Printf *)
-
-(* type doc = Element  of string * doc list | Text of string
-
-let render d =
-  let rec render indent =
-    let indents = List.init indent (fun _ -> "  ") |> String.concat "" in
-    function
-    | Element(name, children) ->
-      let children = List.map (render (indent + 1)) children in
-      sprintf "%s<%s>\n%s\n%s</%s>" indents name (String.concat "\n" children) indents name
-    | Text s -> sprintf "%s%s" indents s
-  in
-  render 0 d
-
-let div ~children () = Element ("div", children)
-let text s = Text s *)
-
+let get_string_for_tests = JSX.render <page />

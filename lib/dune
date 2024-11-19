@@ -10,11 +10,6 @@
  (libraries dream)
  (instrumentation (backend bisect_ppx)))
 
-(rule
- (targets ehtml.ml)
- (deps ehtml.eml.ml)
- (action (run dream_eml %{deps})))
-
 (library
  (modules thtml)
  (name thtml)

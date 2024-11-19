@@ -46,6 +46,13 @@
  (allow_empty))
 
 (dialect
+ (name eml)
+ (implementation
+  (extension eml)
+  (preprocess
+   (run dream_eml --stdout %{input-file}))))
+
+(dialect
  (name mlx)
  (implementation
   (extension mlx)

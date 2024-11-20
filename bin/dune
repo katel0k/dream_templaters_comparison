@@ -1,3 +1,7 @@
 (executable
  (name ehtml_bin)
  (libraries dream ehtml))
+
+(executable
+ (name thtml_bin)
+ (libraries dream thtml tyxml))

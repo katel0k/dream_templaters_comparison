@@ -5,3 +5,7 @@
 (executable
  (name thtml_bin)
  (libraries dream thtml tyxml))
+
+(executable
+ (name thtml_percent_bin)
+ (libraries dream thtml_percent tyxml))

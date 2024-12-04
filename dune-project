@@ -24,8 +24,8 @@
   dune
   dream
   dream-html
-  (ocaml-lsp-server :dev)
-  (ocamlformat :dev)
+  ocaml-lsp-server
+  ocamlformat
 
   (alcotest :with-test)
   (bisect_ppx (and :with-test (>= 2.5.0)))  ; --instrument-with.

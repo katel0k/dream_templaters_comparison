@@ -1,11 +1,14 @@
 (executable
  (name ehtml_bin)
+ (modules ehtml_bin)
  (libraries dream ehtml))
 
 (executable
  (name thtml_bin)
+ (modules thtml_bin)
  (libraries dream thtml tyxml))
 
 (executable
  (name thtml_percent_bin)
+ (modules thtml_percent_bin)
  (libraries dream thtml_percent tyxml))

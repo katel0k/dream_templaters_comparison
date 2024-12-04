@@ -1,5 +1,4 @@
 let () =
-  print_string (Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml.doc);
 assert(
   Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml.doc =
 {|<!DOCTYPE html>

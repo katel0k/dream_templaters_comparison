@@ -1,5 +1,4 @@
 let () =
-print_string @@ Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml_percent.doc;
 (assert (
   Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml_percent.doc =
   {|<!DOCTYPE html>
@@ -46,6 +45,6 @@ print_string @@ Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml_percent.doc;
       <h2 style="padding: 100px 20%">We are comparing those tests</h2>
       <div class="repeating_values_wrapper"><div class="repeating_value repeating_values-colored">We can compare not one,</div><div class="repeating_value ">not two,</div><div class="repeating_value repeating_values-colored">but three values!</div></div>
     </div>
-
+  
 </body></html>|}
 ))

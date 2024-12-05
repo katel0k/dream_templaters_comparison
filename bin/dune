@@ -1,19 +1,26 @@
 (executable
- (name dhtml_bin)
- (modules dhtml_bin)
+ (name dhtml)
+ (modules dhtml)
  (libraries dream dhtml dream-html))
 
 (executable
- (name ehtml_bin)
- (modules ehtml_bin)
+ (name ehtml)
+ (modules ehtml)
  (libraries dream ehtml))
 
 (executable
- (name thtml_bin)
- (modules thtml_bin)
+ (name thtml)
+ (modules thtml)
  (libraries dream thtml tyxml))
 
 (executable
- (name thtml_percent_bin)
- (modules thtml_percent_bin)
+ (name thtml_percent)
+ (modules thtml_percent)
  (libraries dream thtml_percent tyxml))
+
+(executable
+ (name xhtml)
+ (modules xhtml)
+ (libraries dream xhtml html_of_jsx)
+ (preprocess (pps html_of_jsx.ppx))
+)

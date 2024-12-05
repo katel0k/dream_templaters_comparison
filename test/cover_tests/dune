@@ -29,6 +29,5 @@
 
 (test
  (libraries xhtml)
- (instrumentation (backend bisect_ppx))
  (name xhtml_test)
  (modules xhtml_test))

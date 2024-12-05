@@ -1,4 +1,9 @@
 (executable
+ (name dhtml_bin)
+ (modules dhtml_bin)
+ (libraries dream dhtml dream-html))
+
+(executable
  (name ehtml_bin)
  (modules ehtml_bin)
  (libraries dream ehtml))

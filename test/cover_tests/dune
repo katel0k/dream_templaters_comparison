@@ -1,33 +1,29 @@
 (test
  (libraries
-  dhtml
-  common_test)
- (name dhtml_test)
- (modules dhtml_test))
+  dhtml)
+ (name dhtml)
+ (modules dhtml))
 
 (test
  (libraries
-  ehtml
-  common_test)
-  (name ehtml_test)
-  (modules ehtml_test))
+  ehtml)
+  (name ehtml)
+  (modules ehtml))
 
 (test
  (libraries
   tyxml
-  thtml
-  common_test)
-  (name thtml_test)
- (modules thtml_test))
+  thtml)
+  (name thtml)
+ (modules thtml))
 
 (test
  (libraries
-  thtml_percent
-  common_test)
-  (name thtml_percent_test)
- (modules thtml_percent_test))
+  thtml_percent)
+  (name thtml_percent)
+ (modules thtml_percent))
 
 (test
  (libraries xhtml)
- (name xhtml_test)
- (modules xhtml_test))
+ (name xhtml)
+ (modules xhtml))

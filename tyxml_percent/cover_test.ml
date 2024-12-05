@@ -1,6 +1,6 @@
 let () =
 (assert (
-  Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml_percent.doc =
+  Format.asprintf "%a" (Tyxml.Html.pp ()) Lib_percent.Lib.doc =
   {|<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head><title>My comparison test</title><style>
     .wrapper {

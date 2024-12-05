@@ -1,6 +1,6 @@
 let () =
 assert(
-  Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml.doc =
+  Format.asprintf "%a" (Tyxml.Html.pp ()) Thtml.Lib.doc =
 {|<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><head><title>hi</title><style>
 .wrapper {

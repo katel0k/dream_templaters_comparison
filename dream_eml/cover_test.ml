@@ -1,5 +1,5 @@
 let () =
- assert (Ehtml.render () =
+ assert (Ehtml.Lib.render () =
  {|<html>
 <head>
     <title>My comparison test</title>

@@ -1,0 +1,16 @@
+(executable
+ (public_name ebin)
+ (name bin)
+ (modules bin)
+ (libraries dream ehtml))
+
+(library
+ (name ehtml)
+ (modules lib)
+ (libraries dream)
+ (instrumentation (backend bisect_ppx)))
+
+(test 
+ (name cover_test)
+ (modules cover_test)
+ (libraries ehtml))

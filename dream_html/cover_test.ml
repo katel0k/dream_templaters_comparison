@@ -39,5 +39,5 @@ class="repeating_value repeating_values-colored">but three values!</div></div></
 
 let () =
   assert(
-    Dream_html.to_string (Dhtml.page) = resulting_site
+    Dream_html.to_string (Dhtml.Lib.page) = resulting_site
   )

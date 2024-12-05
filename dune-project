@@ -4,21 +4,8 @@
 
 (generate_opam_files true)
 
-(source
- (github username/reponame))
-
-(authors "Author Name")
-
-(maintainers "Maintainer Name")
-
-(license LICENSE)
-
-(documentation https://url/to/documentation)
-
 (package
  (name comparison)
- (synopsis "A short synopsis")
- (description "A longer description")
  (depends
   (ocaml (= 5.1.0))
   dune
@@ -40,10 +27,7 @@
   html_of_jsx
 
   (odoc :with-doc)
- )
- (tags
-  (topics "to describe" your project))
- (allow_empty))
+ ))
 
 (dialect
  (name eml)

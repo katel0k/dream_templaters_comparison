@@ -1,0 +1,18 @@
+(executable
+ (public_name xbin)
+ (name bin)
+ (modules bin)
+ (libraries dream xhtml html_of_jsx)
+ (preprocess (pps html_of_jsx.ppx)))
+
+(library
+ (name xhtml)
+ (modules lib)
+ (libraries html_of_jsx)
+ (preprocess (pps html_of_jsx.ppx))
+ (instrumentation (backend bisect_ppx)))
+
+(test 
+ (name cover_test)
+ (modules cover_test)
+ (libraries xhtml))

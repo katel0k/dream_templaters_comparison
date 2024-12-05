@@ -1,0 +1,17 @@
+(executable
+ (public_name dbin)
+ (name bin)
+ (modules bin)
+ (libraries dream dhtml dream-html))
+
+(library
+ (name dhtml)
+ (modules lib)
+ (wrapped true)
+ (libraries dream-html)
+ (instrumentation (backend bisect_ppx)))
+
+(test 
+ (name cover_test)
+ (modules cover_test)
+ (libraries dhtml))

@@ -1,4 +1,4 @@
-let () = assert((Xhtml.get_string_for_tests) =
+let () = assert((Xhtml.Lib.get_string_for_tests) =
 {|<!DOCTYPE html><html><head><title>My comparison test</title><style>.wrapper {
     background-color: grey;
     padding: 100px 20% 100px 20%;

@@ -1,0 +1,17 @@
+(executable
+ (public_name tpercentbin)
+ (name bin)
+ (modules bin)
+ (libraries dream lib_percent tyxml))
+
+(library
+ (name lib_percent)
+ (modules lib)
+ (libraries tyxml)
+ (preprocess (pps tyxml-ppx))
+ (instrumentation (backend bisect_ppx)))
+
+(test 
+ (name cover_test)
+ (modules cover_test)
+ (libraries lib_percent))

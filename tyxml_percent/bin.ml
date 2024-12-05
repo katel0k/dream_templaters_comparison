@@ -1,5 +1,5 @@
 let index_request _ =
-  Format.asprintf "%a" (Tyxml.Html.pp ~indent:true ()) Thtml.doc
+  Format.asprintf "%a" (Tyxml.Html.pp ~indent:true ()) Lib_percent.Lib.doc
   |> Dream.html
 
 let () =

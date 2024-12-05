@@ -1,0 +1,16 @@
+(executable
+ (public_name tbin)
+ (name bin)
+ (modules bin)
+ (libraries dream thtml tyxml))
+
+(library
+ (name thtml)
+ (modules lib)
+ (libraries tyxml)
+ (instrumentation (backend bisect_ppx)))
+
+(test 
+ (name cover_test)
+ (modules cover_test)
+ (libraries tyxml thtml))

@@ -63,6 +63,23 @@ let render _ = (
   </html>
 )
 
+let rec _stress_render i =
+  if i < 10000 then (_stress_render (i+1)) ^ (repeating_value ~is_colored:(i mod 2 == 0) ~children:(string_of_int i))
+  else ""
+
+let stress_render _ = (
+  <html>
+  <head>
+    <title>Stress</title>
+  </head>
+  <body>
+    <div>
+      <%s! _stress_render 0 %>
+    </div>
+  </body>
+  </html>
+)
+
 
 let word_request request =
   Dream.param request "word"

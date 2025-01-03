@@ -56,3 +56,22 @@ let page =
       ]
     ]
   ]
+
+let rec _stress_render ind =
+  let open Dream_html in
+    if ind < 10000 then
+      (repeating_value (ind mod 2 == 0) [txt "%s" (string_of_int ind)]) :: (_stress_render (ind + 1))
+    else
+      []
+
+let stress_render = 
+  let open Dream_html in
+  let open HTML in
+  html [lang "en"] [
+    head [] [
+      title [] "Stress"
+    ];
+    body [] [
+      div [] (_stress_render 0)
+    ]
+  ]

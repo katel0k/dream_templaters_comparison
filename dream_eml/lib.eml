@@ -64,7 +64,7 @@ let render _ = (
 )
 
 let rec _stress_render i =
-  if i < 10000 then (_stress_render (i+1)) ^ (repeating_value ~is_colored:(i mod 2 == 0) ~children:(string_of_int i))
+  if i < 10000 then (repeating_value ~is_colored:(i mod 2 == 0) ~children:(string_of_int i)) ^ (_stress_render (i+1))
   else ""
 
 let stress_render _ = (

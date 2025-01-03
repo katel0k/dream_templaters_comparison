@@ -63,3 +63,23 @@ let doc = [%html
     </div>
   </body>
 </html>|}]
+
+let rec _stress_render ind =
+  if ind < 10000 then
+    (repeating_value ~is_colored:(ind mod 2 == 0) ~children:[Html.txt (string_of_int ind)]) :: (_stress_render (ind + 1))
+  else
+    []
+
+let stress_render = 
+  [%html
+{|<html>
+  <head>
+      <title>My comparison test</title>
+      <style>Stress</style>
+  </head>
+  <body>
+    <div>|}
+      (_stress_render 0)
+    {|</div>
+  </body>
+  </html>|}]

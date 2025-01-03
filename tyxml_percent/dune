@@ -15,3 +15,8 @@
  (name cover_test)
  (modules cover_test)
  (libraries lib_percent))
+
+(test 
+ (name stress_test)
+ (modules stress_test)
+ (libraries tyxml lib_percent))

@@ -62,3 +62,18 @@ let doc = Html.(
     ]
   ])
     )
+
+let rec _stress_render ind =
+  let open Html in
+    if ind < 10000 then
+      (repeating_value ~is_colored:(ind mod 2 == 0) [txt (string_of_int ind)]) :: (_stress_render (ind + 1))
+    else
+      []
+
+let stress_render = Html.(
+  html
+  (head (title @@ txt "Stress") [])
+  (body [
+    div (_stress_render 0)
+  ])
+)

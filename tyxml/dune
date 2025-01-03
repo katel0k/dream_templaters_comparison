@@ -14,3 +14,8 @@
  (name cover_test)
  (modules cover_test)
  (libraries tyxml thtml))
+
+(test 
+ (name stress_test)
+ (modules stress_test)
+ (libraries tyxml thtml))

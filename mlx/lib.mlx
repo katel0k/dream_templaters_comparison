@@ -69,3 +69,24 @@ let page () =
   </html>
 
 let get_string_for_tests = JSX.render <page />
+
+let range from till =
+  let rec _range ind =
+    if ind < till then ind::_range (ind + 1)
+    else []
+  in
+  _range from
+
+let stress_render () = 
+  <html>
+  <head>
+    <title>"Stress"</title>
+  </head>
+  <body>
+    <div>
+      ((List.map (fun ind -> <repeating_field is_colored=(ind mod 2 == 0)>(JSX.string @@ string_of_int ind)</repeating_field>) (range 0 10000)) |> JSX.list)
+    </div>
+  </body>
+  </html>
+
+let get_string_for_stress = JSX.render <stress_render />

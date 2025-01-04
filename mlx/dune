@@ -16,3 +16,8 @@
  (name cover_test)
  (modules cover_test)
  (libraries xhtml))
+
+(test 
+ (name stress_test)
+ (modules stress_test)
+ (libraries xhtml))

@@ -64,13 +64,13 @@ let doc = [%html
   </body>
 </html>|}]
 
-let rec _stress_render ind =
-  if ind < 10000 then
-    (repeating_value ~is_colored:(ind mod 2 == 0) ~children:[Html.txt (string_of_int ind)]) :: (_stress_render (ind + 1))
+let rec _stress_render volume ind =
+  if ind < volume then
+    (repeating_value ~is_colored:(ind mod 2 == 0) ~children:[Html.txt (string_of_int ind)]) :: (_stress_render volume (ind + 1))
   else
     []
 
-let stress_render = 
+let stress_render volume = 
   [%html
 {|<html>
   <head>
@@ -79,7 +79,7 @@ let stress_render =
   </head>
   <body>
     <div>|}
-      (_stress_render 0)
+      (_stress_render volume 0)
     {|</div>
   </body>
   </html>|}]

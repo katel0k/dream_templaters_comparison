@@ -1,8 +1,12 @@
 let time f x =
   let t = Sys.time() in
   let fx = f x in
-  Printf.printf "MLX execution time: %fs\n" (Sys.time() -. t);
+  Printf.printf "%f\n" (Sys.time() -. t);
   fx
 
 let () =
-  ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress) ()
+  Printf.printf "MLX\n";
+  ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 100) ();
+  ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 1000) ();
+  ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 10000) ();
+  ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 100000) ();

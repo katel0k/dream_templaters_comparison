@@ -57,14 +57,14 @@ let page =
     ]
   ]
 
-let rec _stress_render ind =
+let rec _stress_render volume ind =
   let open Dream_html in
-    if ind < 10000 then
-      (repeating_value (ind mod 2 == 0) [txt "%s" (string_of_int ind)]) :: (_stress_render (ind + 1))
+    if ind < volume then
+      (repeating_value (ind mod 2 == 0) [txt "%s" (string_of_int ind)]) :: (_stress_render volume (ind + 1))
     else
       []
 
-let stress_render = 
+let stress_render volume = 
   let open Dream_html in
   let open HTML in
   html [lang "en"] [
@@ -72,6 +72,6 @@ let stress_render =
       title [] "Stress"
     ];
     body [] [
-      div [] (_stress_render 0)
+      div [] (_stress_render volume 0)
     ]
   ]

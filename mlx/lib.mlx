@@ -77,16 +77,16 @@ let range from till =
   in
   _range from
 
-let stress_render () = 
+let stress_render ~volume () = 
   <html>
   <head>
     <title>"Stress"</title>
   </head>
   <body>
     <div>
-      ((List.map (fun ind -> <repeating_field is_colored=(ind mod 2 == 0)>(JSX.string @@ string_of_int ind)</repeating_field>) (range 0 10000)) |> JSX.list)
+      ((List.map (fun ind -> <repeating_field is_colored=(ind mod 2 == 0)>(JSX.string @@ string_of_int ind)</repeating_field>) (range 0 volume)) |> JSX.list)
     </div>
   </body>
   </html>
 
-let get_string_for_stress = JSX.render <stress_render />
+let get_string_for_stress volume = JSX.render <stress_render volume/>

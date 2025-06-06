@@ -1,0 +1,4 @@
+(executable
+ (name stress)
+ (public_name stress)
+ (libraries ehtml dhtml thtml lib_percent xhtml))

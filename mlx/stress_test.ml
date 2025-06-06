@@ -10,3 +10,4 @@ let () =
   ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 1000) ();
   ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 10000) ();
   ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 100000) ();
+  ignore @@ time (fun () -> Xhtml.Lib.get_string_for_stress 1000000) ()

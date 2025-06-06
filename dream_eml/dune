@@ -4,6 +4,12 @@
  (modules bin)
  (libraries dream ehtml))
 
+(executable
+ (public_name help)
+ (name help)
+ (modules help)
+ (libraries dream ehtml))
+
 (library
  (name ehtml)
  (modules lib)

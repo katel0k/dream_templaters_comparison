@@ -9,4 +9,5 @@ let () =
   ignore @@ time (Format.asprintf "%a" (Tyxml.Html.pp ())) (Lib_percent.Lib.stress_render 100);
   ignore @@ time (Format.asprintf "%a" (Tyxml.Html.pp ())) (Lib_percent.Lib.stress_render 1000);
   ignore @@ time (Format.asprintf "%a" (Tyxml.Html.pp ())) (Lib_percent.Lib.stress_render 10000);
-  ignore @@ time (Format.asprintf "%a" (Tyxml.Html.pp ())) (Lib_percent.Lib.stress_render 100000)
+  ignore @@ time (Format.asprintf "%a" (Tyxml.Html.pp ())) (Lib_percent.Lib.stress_render 100000);
+  ignore @@ time (Format.asprintf "%a" (Tyxml.Html.pp ())) (Lib_percent.Lib.stress_render 1000000)

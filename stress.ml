@@ -1,23 +1,6 @@
-let time f x =
-  let t = Sys.time() in
-  let fx = f x in
-  Printf.printf "%f\n" (Sys.time() -. t);
-  fx
+(* open Lib
 
-
-let volumes = [
-  1; 2; 5; 10; 20; 50; 100; 200; 500; 1000; 2000; 5000; 10000; 20000; 50000; 100000; 200000; 500000; 1000000
-]
-
-let generators = [
-  (fun volume -> Ehtml.Lib.stress_render volume ());
-  (fun volume -> Dream_html.to_string @@ Dhtml.Lib.stress_render volume);
-  (fun volume -> Xhtml.Lib.get_string_for_stress volume);
-  (fun volume -> (Format.asprintf "%a" @@ Tyxml.Html.pp ()) (Thtml.Lib.stress_render volume));
-  (fun volume -> (Format.asprintf "%a" @@ Tyxml.Html.pp ()) (Lib_percent.Lib.stress_render volume))
-]
-
-let () =
+(* let () =
   Printf.printf "\n";
   List.map
     (
@@ -26,4 +9,79 @@ let () =
       |> List.map (fun (f, v) -> time f v)
     )
     volumes
-  |> ignore
+  |> ignore *)
+
+let () =
+List.map
+(
+  fun volume ->
+    (* Printf.printf "%d\n" volume; *)
+   time (List.nth generators 3) volume
+)
+  (range 1 10000)
+|> ignore *)
+
+(* open Printf *)
+
+
+let repeating_value ~is_colored = Tyxml.Html.(
+  div ~a:[a_class
+    (["repeating_value"] @ (if is_colored then ["repeating_values-colored"] else [""]))
+    ]
+)
+
+let rec _stress_render volume ind =
+  let open Tyxml.Html in
+    if ind < volume then
+      (repeating_value ~is_colored:(ind mod 2 == 0) [txt (string_of_int ind)]) :: (_stress_render volume (ind + 1))
+    else
+      []
+
+let stress_render volume = Tyxml.Html.(
+  html
+  (head (title @@ txt "Stress") [])
+  (body [
+    div (_stress_render volume 0)
+  ])
+)
+
+let st volume = (Format.asprintf "%a" @@ Tyxml.Html.pp ()) (stress_render volume)
+
+let time f x =
+  let t = Sys.time() in
+  let fx = f x in
+  Printf.printf "%f\n" (Sys.time() -. t);
+  fx
+
+open Benchmark
+let x = 17
+
+let () =
+  let s = latency1 ~repeat:5 10000L st x in
+    (* tabulate s; *)
+    print_gc s;
+    print_newline ();
+  let s = throughput1 ~repeat:5 1 st x in
+    (* tabulate s; *)
+    print_gc s;
+    print_newline ();
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;
+  time st x |> ignore;

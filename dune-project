@@ -14,6 +14,8 @@
   ocaml-lsp-server
   ocamlformat
 
+  (benchmark :with-test)
+
   (alcotest :with-test)
   (bisect_ppx (and :with-test (>= 2.5.0)))  ; --instrument-with.
   (ppx_expect (and :with-test (>= v0.15.0) (< v0.17.0)))

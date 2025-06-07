@@ -1,4 +1,10 @@
+; (library
+;  (name lib)
+;  (modules lib)
+;  (libraries ehtml dhtml thtml lib_percent xhtml))
+
 (executable
  (name stress)
  (public_name stress)
- (libraries ehtml dhtml thtml lib_percent xhtml))
+ (modules stress)
+ (libraries tyxml benchmark))
